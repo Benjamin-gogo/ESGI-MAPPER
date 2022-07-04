@@ -1,0 +1,196 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:paddingTop="30dp"
+    tools:context=".ResultActivity">
+
+    <ImageButton
+        android:id="@+id/btn_back"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:backgroundTint="#00FFFFFF"
+        android:src="@drawable/ic_baseline_arrow_back_ios_24_blue_app"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintStart_toStartOf="parent"/>
+
+    <TextView
+        android:id="@+id/TitleResult"
+        android:text="Itinéraires"
+        android:textSize="30dp"
+        android:gravity="center_horizontal|center_vertical"
+        android:textStyle="bold"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        app:layout_constraintTop_toTopOf="parent"/>
+
+
+    <androidx.cardview.widget.CardView
+        android:id="@+id/firstCard"
+        app:layout_constraintTop_toBottomOf="@+id/TitleResult"
+        android:layout_width="match_parent"
+        android:layout_height="150dp"
+        android:layout_margin="20dp"
+        android:background="@color/white"
+        app:cardCornerRadius="15dp"
+        app:cardElevation="10dp"
+        tools:ignore="MissingConstraints"
+        tools:layout_editor_absoluteY="20dp">
+
+        <androidx.constraintlayout.widget.ConstraintLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:padding="15dp"
+            tools:ignore="MissingConstraints">
+
+            <FrameLayout
+                android:id="@+id/firstFrameLayout"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginEnd="8dp"
+                android:layout_marginStart="8dp" >
+
+                <EditText
+                    android:id="@+id/editFrom"
+                    android:text="Ma position"
+                    android:layout_width="match_parent"
+                    android:layout_marginStart="60dp"
+                    android:layout_height="40dp">
+                </EditText>
+
+                <TextView
+                    android:id="@+id/prefix"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_gravity="center_vertical"
+                    android:paddingStart="8dp"
+                    android:text="Départ" />
+            </FrameLayout>
+
+            <FrameLayout
+                android:id="@+id/secondFrameLayout"
+                app:layout_constraintTop_toBottomOf="@+id/firstFrameLayout"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginEnd="8dp"
+                android:layout_marginStart="8dp" >
+
+                <EditText
+                    android:id="@+id/editTo"
+                    android:layout_width="match_parent"
+                    android:layout_marginStart="60dp"
+                    android:layout_height="40dp">
+                </EditText>
+
+                <TextView
+                    android:id="@+id/prefix2"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_gravity="center_vertical"
+                    android:paddingStart="8dp"
+                    android:text="Arrivée" />
+            </FrameLayout>
+
+
+            <Button
+                android:id="@+id/buttonDateTime"
+                android:layout_width="200dp"
+                android:layout_height="50dp"
+                android:text="Maintenant"
+                android:drawableLeft="@drawable/ic_baseline_update_24"
+                android:textColor="@color/black"
+                android:backgroundTint="@color/white"
+                app:layout_constraintTop_toBottomOf="@+id/secondFrameLayout"
+                android:gravity="center_horizontal"/>
+
+            <Button
+                android:layout_width="50dp"
+                android:layout_height="50dp"
+                android:drawableLeft="@drawable/ic_baseline_refresh_24"
+                android:textColor="@color/black"
+                android:backgroundTint="@color/white"
+                app:layout_constraintTop_toBottomOf="@+id/secondFrameLayout"
+                app:layout_constraintStart_toEndOf="@+id/buttonDateTime"
+                app:layout_constraintEnd_toEndOf="parent"
+                />
+        </androidx.constraintlayout.widget.ConstraintLayout>
+
+
+    </androidx.cardview.widget.CardView>
+
+    <androidx.cardview.widget.CardView
+        android:id="@+id/transports"
+        android:layout_width="60dp"
+        android:layout_height="60dp"
+        android:layout_marginTop="16dp"
+        android:layout_marginStart="50dp"
+        app:cardCornerRadius="15dp"
+        app:cardElevation="10dp"
+        app:layout_constraintTop_toBottomOf="@id/firstCard"
+        app:layout_constraintStart_toStartOf="parent"
+        tools:ignore="MissingConstraints">
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:gravity="center"
+            android:orientation="vertical"
+            android:padding="16dp">
+            <ImageView
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:src="@drawable/train" />
+        </LinearLayout>
+    </androidx.cardview.widget.CardView>
+
+
+    <androidx.cardview.widget.CardView
+        android:id="@+id/pied"
+        android:layout_width="60dp"
+        android:layout_height="60dp"
+        android:layout_marginTop="16dp"
+        app:cardCornerRadius="15dp"
+        app:cardElevation="10dp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintStart_toEndOf="@+id/transports"
+        app:layout_constraintTop_toBottomOf="@id/firstCard">
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:gravity="center"
+            android:orientation="vertical"
+            android:padding="16dp">
+            <ImageView
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:src="@drawable/walker" />
+        </LinearLayout>
+    </androidx.cardview.widget.CardView>
+
+    <androidx.cardview.widget.CardView
+        android:id="@+id/car"
+        android:layout_width="60dp"
+        android:layout_height="60dp"
+        android:layout_marginTop="16dp"
+        android:layout_marginEnd="50dp"
+        app:cardCornerRadius="15dp"
+        app:cardElevation="10dp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/firstCard"
+        tools:ignore="MissingConstraints"
+        tools:layout_editor_absoluteX="20dp">
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:gravity="center"
+            android:orientation="vertical"
+            android:padding="16dp">
+            <ImageView
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:src="@drawable/car" />
+        </LinearLayout>
+    </androidx.cardview.widget.CardView>
+</androidx.constraintlayout.widget.ConstraintLayout>
